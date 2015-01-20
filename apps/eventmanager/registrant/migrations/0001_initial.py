@@ -16,7 +16,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('fName', models.CharField(default=b'John', max_length=100)),
                 ('lName', models.CharField(default=b'Doe', max_length=100)),
-                ('registrantEmail', models.EmailField(default=b'example@example.com', max_length=100)),
+                ('email', models.EmailField(default=b'example@example.com', max_length=100)),
+                ('deleted', models.BooleanField(default=False, db_index=True)),
             ],
             options={
             },

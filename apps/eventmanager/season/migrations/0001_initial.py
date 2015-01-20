@@ -7,7 +7,8 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('team', '0001_initial'),
+        ('team', '__first__'),
+        ('organization', '0001_initial'),
     ]
 
     operations = [
@@ -15,10 +16,12 @@ class Migration(migrations.Migration):
             name='Season',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('seasonName', models.CharField(max_length=200)),
-                ('seasonDescription', models.TextField()),
-                ('seasonStart', models.DateTimeField(auto_now=True)),
-                ('seasonEnd', models.DateTimeField(auto_now=True)),
+                ('name', models.CharField(max_length=200)),
+                ('description', models.TextField()),
+                ('start', models.DateTimeField(auto_now=True)),
+                ('end', models.DateTimeField(auto_now=True)),
+                ('deleted', models.BooleanField(default=False, db_index=True)),
+                ('organization', models.ForeignKey(to='organization.Organization')),
             ],
             options={
             },
