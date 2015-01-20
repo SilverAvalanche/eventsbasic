@@ -1,3 +1,4 @@
+#models.py- Eventmanager
 from django.db import models
+from apps.eventmanager import *
 
-# Create your models here.

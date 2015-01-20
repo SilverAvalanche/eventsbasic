@@ -36,6 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'apps',
+    'apps.eventmanager',
+    'apps.eventmanager.organization',
+    'apps.eventmanager.season',
+    'apps.eventmanager.team',
+    'apps.eventmanager.registrant',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +67,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'eventsbasic_db',
-        'USER': '',
+        'USER': 'jlewis',
         'PASSWORD': 'jlewis_ROCKS!',
         'HOST': '127.0.0.1',
         'PORT': ''
