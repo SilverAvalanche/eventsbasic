@@ -12,7 +12,6 @@ class Season(models.Model):
     end = models.DateTimeField(auto_now=True)
         
     deleted = models.BooleanField(default=False, db_index=True)
-    #datetimefield format ['%Y-%m-%d %H:%M']
     
     organization = models.ForeignKey(Organization)    
     seasonTeams = models.ManyToManyField(Team, through='SeasonTeam', through_fields=('season','team')) 

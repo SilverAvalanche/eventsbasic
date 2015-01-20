@@ -9,8 +9,9 @@ class Registrant(models.Model):
     fName = models.CharField(max_length=100, default='John')
     lName = models.CharField(max_length=100, default='Doe')
     email = models.EmailField(max_length=100, default='example@example.com')
-        
+    created = models.DateTimeField(auto_now=True )        
     deleted = models.BooleanField(default=False, db_index=True)
+    # point to the user model?
     
 
     @property
@@ -22,3 +23,4 @@ class Registrant(models.Model):
         if (self.deleted == False):
             return True
         return False
+
